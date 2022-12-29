@@ -4,9 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "./scriptup.sh && ts-node-dev src/index.ts",
-    "down": "./scriptup.sh",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "dev": "./scriptup.sh && nodemon --watch \"./src/**\" ./src/server.ts",
+    "down": "./scriptdown.sh",
+    "lint": "eslint . --ext .jsx,.ts,.tsx",
     "test": "jest -i --forceExit --verbose",
     "test:dev": "mocha -r ts-node/register src/tests/unit/**/*.test.ts --exit -t 60000",
     "test:coverage": "nyc npm run test:dev"
@@ -20,6 +20,7 @@
     "@types/express": "4.17.13",
     "@types/jest": "27.4.1",
     "@types/joi": "17.2.3",
+    "@types/md5": "^2.3.2",
     "@types/mocha": "9.1.0",
     "@types/node": "16.11.7",
     "@types/sinon": "10.0.11",
@@ -52,6 +53,8 @@
     "express": "^4.17.1",
     "express-async-errors": "3.1.1",
     "joi": "17.6.0",
+    "md5": "^2.3.0",
+    "md5-typescript": "^1.0.5",
     "mongoose": "6.1.8",
     "zod": "3.11.6"
   }
