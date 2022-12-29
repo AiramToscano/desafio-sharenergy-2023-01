@@ -1,10 +1,13 @@
 import React from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import Login from './Login';
 
 function App() {
   return (
-    <div>
-      <h1> olá mundo</h1>
-    </div>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Navigate replace to="/login" />} />
+    </Routes>
   );
 }
 
