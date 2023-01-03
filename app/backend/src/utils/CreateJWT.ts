@@ -1,6 +1,6 @@
-import { sign, SignOptions } from 'jsonwebtoken';
+import { sign, SignOptions, decode } from 'jsonwebtoken';
 import md5 from 'md5';
-// import { JwtPayloadHandler } from '../interfaces/IJwt';
+import { JwtPayloadHandler } from '../interfaces/IJwt';
 import { IModel } from '../interfaces/IModel';
 import { IUser } from '../interfaces/IUser';
 
@@ -24,16 +24,16 @@ export default class CreateJWT {
     return sign(payload, secret, signInOptions);
   }
 
-//   async validJwt(token: string) {
-//     const validToken = decode(token);
-//     if (validToken != null) {
-//       const { name } = validToken as JwtPayloadHandler;
-//       const listUser = await this.model.findOne(name);
-//       if (listUser != null) {
-//         return listUser.dataValues.username;
-//       }
-//       return false;
-//     }
-//     return false;
-//   }
+  async validJwt(token: string) {
+    const validToken = decode(token);
+    if (validToken != null) {
+      const { name } = validToken as JwtPayloadHandler;
+      const listUser = await this._user.readUser(name);
+      if (listUser != null) {
+        return true;
+      }
+      return false;
+    }
+    return false;
+  }
 }

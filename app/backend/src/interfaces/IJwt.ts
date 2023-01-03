@@ -6,5 +6,5 @@ export interface JwtPayloadHandler extends JwtPayload {
 
 export interface Ijwt {
   createJwt(username: string, password: string):Promise<string>
-  // validJwt(token: string | undefined):Promise<string | boolean>
+  validJwt(token: string | undefined):Promise<boolean>
 }

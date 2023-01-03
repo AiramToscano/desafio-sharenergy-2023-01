@@ -12,6 +12,10 @@ abstract class MongoModel<T> implements IModel<T> {
   public async readOne(username: string, password: string):Promise<T | null> {
     return this._model.findOne({ username, password });
   }
+
+  public async readUser(username: string):Promise<T | null> {
+    return this._model.findOne({ username });
+  }
 }
 
 export default MongoModel;
