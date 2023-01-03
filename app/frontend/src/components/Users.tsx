@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { apiRandomUsers } from '../utils/Apis';
 import { IUsers } from '../interfaces/IUsers';
 import usePaginations from '../hooks/usePagination';
+import Header from './Header';
 
 function Users() {
   const [users, setUsers] = useState<IUsers[]>([]);
@@ -23,7 +24,7 @@ function Users() {
         <input
           onChange={(e) => setFilterbyName(e.target.value)}
           name="filterByName"
-          placeholder="Digite o nome, email ou username"
+          placeholder="Digite o nome, email ou username desejado"
           value={filterbyname}
           type="username"
         />
