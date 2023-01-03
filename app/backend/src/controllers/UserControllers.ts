@@ -4,7 +4,7 @@ import { IUser } from '../interfaces/IUser';
 import { Ijwt } from '../interfaces/IJwt';
 
 export default class CarController {
-  constructor(private _service: IService<IUser>,  private jwt: Ijwt) { }
+  constructor(private _service: IService<IUser>, private jwt: Ijwt) { }
 
   public async readOne(
     req: Request,

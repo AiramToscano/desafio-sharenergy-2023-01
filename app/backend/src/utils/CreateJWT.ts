@@ -1,14 +1,14 @@
-import { sign, SignOptions, decode } from 'jsonwebtoken';
+import { sign, SignOptions } from 'jsonwebtoken';
 import md5 from 'md5';
 // import { JwtPayloadHandler } from '../interfaces/IJwt';
 import { IModel } from '../interfaces/IModel';
 import { IUser } from '../interfaces/IUser';
 
 export default class CreateJWT {
-    private _user:IModel<IUser>;
-    constructor(model:IModel<IUser>) {
-        this._user = model;
-      }
+  private _user:IModel<IUser>;
+  constructor(model:IModel<IUser>) {
+    this._user = model;
+  }
 
   async createJwt(username: string, password: string) {
     const md5password = md5(password);
