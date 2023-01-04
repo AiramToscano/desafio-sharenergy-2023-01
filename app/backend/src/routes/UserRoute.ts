@@ -12,6 +12,6 @@ const UserService = new IUserService(User);
 const UserController = new IUserController(UserService, Userjwt);
 
 route.post('/login', (req, res) => UserController.readOne(req, res));
-route.get('/validjwt', (req, res) => UserController.AuthToken(req, res));
+// route.get('/validjwt', (req, res) => UserController.AuthToken(req, res));
 
 export default route;
