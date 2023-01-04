@@ -17,3 +17,8 @@ export async function apiRandomUsers(page: number) {
     return false;
   }
 }
+
+export async function apiRandomDogs() {
+  const response = await axios.get('https://random.dog/doggos');
+  return response.data;
+}
