@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 import Users from '../components/Users';
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
 
   return (
     <div>
+      <Header />
       <Users />
     </div>
   );
