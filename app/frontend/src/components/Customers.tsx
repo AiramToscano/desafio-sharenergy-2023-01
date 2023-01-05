@@ -17,10 +17,9 @@ function Users() {
   return (
     <div>
       {customers.length >= 1 ? customers.map((e) => (
-        <div key={e.name}>
+        <div key={e.id}>
           <p>{e.name}</p>
           <button
-            // onClick={() => setActualPage(index + 1)}
             type="button"
           >
             Ver Detalhes

@@ -8,10 +8,14 @@ class CustomersService implements ICustomerService<ICustomers> {
     this._costumer = model;
   }
 
-  public async create(obj : ICustomers):Promise<ICustomers> {
-    const result = await this._costumer.create(obj);
-    if (!result) throw new Error('Usuario não encontrado');
-    return result;
+  public async create(obj : ICustomers):Promise<ICustomers | undefined> {
+    const {name, email, cpf} = obj
+    const Users = await this._costumer.readOneCustumer(name, cpf, email);
+    if(!Users) {
+      const result = await this._costumer.create(obj);
+      return result;
+    }
+    if (Users) throw new Error('Usuario Já cadastrado');
   }
 
   public async readAll():Promise<ICustomers[]> {

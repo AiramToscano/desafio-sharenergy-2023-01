@@ -12,10 +12,10 @@ export default class CustomerController {
     const {obj} = req.body;
     try {
       await this._service.create(obj);
-      return res.status(201).end();
+      return res.status(201).json({message: 'Usuario criado com sucesso'});
     } catch {
       return res.status(400)
-        .json({ message: 'não foi possível cadastrar o usuario' });
+        .json({ message: 'Usuario com os campos já cadastrado'});
     }
   }
 

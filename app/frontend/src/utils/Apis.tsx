@@ -29,14 +29,18 @@ export async function apiGetCustomers() {
 }
 
 export async function apiCreateCustomers(obj: object, token: string) {
-  const response = await axios.post(
-    'http://localhost:3001/customers',
-    { obj },
-    {
-      headers: {
-        authorization: `${token}`,
+  try {
+    const response = await axios.post(
+      'http://localhost:3001/customers',
+      { obj },
+      {
+        headers: {
+          authorization: `${token}`,
+        },
       },
-    },
-  );
-  return response.data;
+    );
+    return response.data;
+  } catch (err) {
+    return err;
+  }
 }
