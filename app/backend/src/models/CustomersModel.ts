@@ -5,7 +5,7 @@ import MongoModel from './MongoModel';
 const frameMongooseSchema = new Schema<ICustomers>({
   name: String,
   cpf: String,
-  adress: String,
+  address: String,
   email: String,
   phone: String,
 }, { versionKey: false });

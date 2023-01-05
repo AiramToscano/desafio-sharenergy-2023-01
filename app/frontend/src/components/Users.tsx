@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { apiRandomUsers } from '../utils/Apis';
 import { IUsers } from '../interfaces/IUsers';
 import usePaginations from '../hooks/usePagination';
-import Header from './Header';
 
 function Users() {
   const [users, setUsers] = useState<IUsers[]>([]);

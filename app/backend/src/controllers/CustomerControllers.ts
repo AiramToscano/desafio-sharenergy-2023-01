@@ -9,7 +9,7 @@ export default class CustomerController {
     req: Request,
     res: Response,
   ) {
-    const obj = req.body;
+    const {obj} = req.body;
     try {
       await this._service.create(obj);
       return res.status(201).end();

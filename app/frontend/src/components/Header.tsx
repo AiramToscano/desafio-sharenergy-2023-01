@@ -17,8 +17,12 @@ function Header() {
     navigate('/randomdog');
   }
 
-  function handleSubmithome() {
+  function handleSubmitHome() {
     navigate('/home');
+  }
+
+  function handleSubmitCustomer() {
+    navigate('/customers');
   }
 
   return (
@@ -32,7 +36,7 @@ function Header() {
         </button>
         <button
           type="button"
-          onClick={handleSubmithome}
+          onClick={handleSubmitHome}
         >
           Home
         </button>
@@ -41,6 +45,12 @@ function Header() {
           onClick={handleSubmiRadomDog}
         >
           Random Dog
+        </button>
+        <button
+          type="button"
+          onClick={handleSubmitCustomer}
+        >
+          Customers
         </button>
         <button
           type="button"

@@ -22,3 +22,21 @@ export async function apiRandomDogs() {
   const response = await axios.get('https://random.dog/doggos');
   return response.data;
 }
+
+export async function apiGetCustomers() {
+  const response = await axios.get('http://localhost:3001/customers');
+  return response.data;
+}
+
+export async function apiCreateCustomers(obj: object, token: string) {
+  const response = await axios.post(
+    'http://localhost:3001/customers',
+    { obj },
+    {
+      headers: {
+        authorization: `${token}`,
+      },
+    },
+  );
+  return response.data;
+}

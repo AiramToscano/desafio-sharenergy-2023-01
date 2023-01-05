@@ -24,9 +24,10 @@ export default class CustomerMiddlewares {
     res: Response,
     next: NextFunction,
   ) {
-    const { name } = req.body;
+    const { obj } = req.body;
+    const {name} = obj;
       if(!name || name.length < 3 ) {
-        return res.status(400).json({ message: 'fields is required' });
+        return res.status(400).json({ message: 'name is required' });
       }
       if(typeof(name) != 'string') {
         return res.status(400).json({ message: 'name is string' });
@@ -39,9 +40,10 @@ export default class CustomerMiddlewares {
       res: Response,
       next: NextFunction,
     ) {
-      const { email } = req.body;
+      const { obj } = req.body;
+      const {email} = obj;
         if(!email) {
-          return res.status(400).json({ message: 'fields is required' });
+          return res.status(400).json({ message: 'email is required' });
         }
         const regexemail = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i
         if(!regexemail.test(email)) {
@@ -54,10 +56,11 @@ export default class CustomerMiddlewares {
         req: Request,
         res: Response,
         next: NextFunction,
-      ) {
-        const { address } = req.body;
+      ) {     
+        const { obj } = req.body;
+        const {address} = obj;
           if(!address || address.length < 3) {
-            return res.status(400).json({ message: 'fields is required' });
+            return res.status(400).json({ message: 'address is required' });
           }
           if(typeof(address) != 'string') {
             return res.status(400).json({ message: 'address is string' });
@@ -69,9 +72,10 @@ export default class CustomerMiddlewares {
           res: Response,
           next: NextFunction,
         ) {
-          const { phone } = req.body;
+          const { obj } = req.body;
+          const {phone} = obj;
             if(!phone || phone.length < 8) {
-              return res.status(400).json({ message: 'fields is required' });
+              return res.status(400).json({ message: 'phone is required' });
             }
             if(typeof(phone) != 'string') {
               return res.status(400).json({ message: 'phone is string' });
@@ -83,9 +87,10 @@ export default class CustomerMiddlewares {
             res: Response,
             next: NextFunction,
           ) {
-            const { cpf } = req.body;
+            const { obj } = req.body;
+            const {cpf} = obj;
               if(!cpf || cpf.length < 8) {
-                return res.status(400).json({ message: 'fields is required' });
+                return res.status(400).json({ message: 'cpf is required' });
               }
               if(typeof(cpf) != 'string') {
                 return res.status(400).json({ message: 'cpf is string' });

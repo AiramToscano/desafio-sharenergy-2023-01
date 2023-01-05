@@ -4,10 +4,12 @@ import Login from './Login';
 import Home from './Home';
 import HttpCats from './HttpCats';
 import RandomDog from './RandomDog';
+import PageCustomers from './PageCustomers';
 
 function App() {
   return (
     <Routes>
+      <Route path="/customers" element={<PageCustomers />} />
       <Route path="/randomdog" element={<RandomDog />} />
       <Route path="/httpcat" element={<HttpCats />} />
       <Route path="/home" element={<Home />} />
