@@ -32,8 +32,8 @@ export default class CreateJWT {
       if (listUser != null) {
         return true;
       }
-      return false;
+      throw new Error('Usuario não encontrado');
     }
-    return false;
+    throw new Error('Usuario não encontrado');
   }
 }

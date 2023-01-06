@@ -20,13 +20,4 @@ export default class UsersController {
         .json({ message: 'Usuario não encontrado ou senha inválida' });
     }
   }
-
-  public async AuthToken(
-    req: Request,
-    res: Response,
-  ) {
-    const { authorization } = req.headers;
-      const createjwt = await this.jwt.validJwt(authorization);
-      return res.status(200).json(createjwt);
-  }
 }
