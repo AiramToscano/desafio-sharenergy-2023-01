@@ -17,8 +17,12 @@ abstract class MongoModel<T> implements IModel<T> {
     return this._model.findOne({ _id });
   }
 
-  public async readOneCustumer(name: string, cpf: string, email: string):Promise<T | null> {
-    return this._model.findOne({$or:[{name}, {cpf}, {email}]});
+  public async readOneCustumer(
+    name: string,
+    cpf: string,
+    email: string,
+  ):Promise<T | null> {
+    return this._model.findOne({ $or: [{ name }, { cpf }, { email }] });
   }
 
   public async readUser(username: string):Promise<T | null> {
@@ -46,7 +50,6 @@ abstract class MongoModel<T> implements IModel<T> {
 
   public async delete(_id:string):Promise<T | null> {
     if (!isValidObjectId(_id)) throw Error('InvalidMongoId');
-    
     return this._model.findByIdAndRemove({ _id });
   }
 }

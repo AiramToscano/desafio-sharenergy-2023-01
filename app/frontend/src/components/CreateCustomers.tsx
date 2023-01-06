@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { apiCreateCustomers, apiGetCustomers } from '../utils/Apis';
 import useCustomers from '../hooks/useCustomers';
-import FormCustomers from '../components/FormCustomers';
+import FormCustomers from './FormCustomers';
 
 function PageCustomers() {
   const [name, setName] = useState('');
