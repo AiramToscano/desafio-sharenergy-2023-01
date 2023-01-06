@@ -7,8 +7,8 @@ function PageCustomers() {
   return (
     <div>
       <Header />
-      <FormCustomers />
       <h4>Clientes: </h4>
+      <FormCustomers />
       <Customers />
     </div>
   );

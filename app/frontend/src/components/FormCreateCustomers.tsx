@@ -32,6 +32,7 @@ function PageCustomers() {
       if (api.message) setMsgApi(api.message);
       if (api.response) setMsgApi(api.response.data.message);
       const customersData = await apiGetCustomers();
+      setTimeout(() => { setMsgApi(''); }, 3000);
       setCustomers(customersData);
     }
   }
@@ -87,9 +88,7 @@ function PageCustomers() {
           </button>
         </div>
         <div className="error-message">
-          <p>
-            {msgApi}
-          </p>
+          <p>{msgApi}</p>
         </div>
       </form>
     </div>

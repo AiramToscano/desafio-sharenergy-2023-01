@@ -19,6 +19,20 @@ export default class CustomerController {
     }
   }
 
+  public async readOne(
+    req: Request,
+    res: Response,
+  ) {
+    const {id} = req.body;
+    try {
+      const result = await this._service.readOne(id);
+      return res.status(201).json(result);
+    } catch {
+      return res.status(400)
+        .json({ message: 'Usuario não encontrado'});
+    }
+  }
+
   public async readAll(
     _req: Request,
     res: Response,
@@ -37,7 +51,7 @@ export default class CustomerController {
     res: Response,
   ) {
     try {
-      const obj = req.body;
+      const {obj} = req.body;
       const { id } = req.params
       const customers = await this._service.update(id, obj);
       return res.status(204).json(customers);

@@ -18,6 +18,14 @@ class CustomersService implements ICustomerService<ICustomers> {
     if (Users) throw new Error('Usuario Já cadastrado');
   }
 
+  public async readOne(_id : string):Promise<ICustomers | undefined> {
+    const Users = await this._costumer.readOneId(_id);
+    if(!Users) {
+      throw new Error('Usuario não encontrado');
+    }
+    if (Users) return Users
+  }
+
   public async readAll():Promise<ICustomers[]> {
     const result = await this._costumer.readAll();
     if (!result) throw new Error('nenhum usuario encontrado');

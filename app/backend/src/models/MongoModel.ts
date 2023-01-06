@@ -13,6 +13,10 @@ abstract class MongoModel<T> implements IModel<T> {
     return this._model.findOne({ username, password });
   }
 
+  public async readOneId(_id: string):Promise<T | null> {
+    return this._model.findOne({ _id });
+  }
+
   public async readOneCustumer(name: string, cpf: string, email: string):Promise<T | null> {
     return this._model.findOne({$or:[{name}, {cpf}, {email}]});
   }

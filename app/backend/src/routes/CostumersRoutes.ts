@@ -29,12 +29,22 @@ route.get('/customers', (req, res) => CustomerController.readAll(req, res));
 
 route.put('/customers/:id',
 (req, res, next) => middlewares.validJwt(req, res, next),
+(req, res, next) => middlewares.validCostumersName(req, res, next),
+(req, res, next) => middlewares.validCostumersCPF(req, res, next),
+(req, res, next) => middlewares.validCostumersEmail(req, res, next),
+(req, res, next) => middlewares.validCostumersphone(req, res, next),
+(req, res, next) => middlewares.validCostumersAdress(req, res, next),
 (req, res) => CustomerController.update(req, res),
 );
 
 route.delete('/customers/:id',
 (req, res, next) => middlewares.validJwt(req, res, next),
 (req, res) => CustomerController.delete(req, res),
+);
+
+route.post('/customer',
+(req, res, next) => middlewares.validJwt(req, res, next),
+(req, res) => CustomerController.readOne(req, res),
 );
 
 export default route;

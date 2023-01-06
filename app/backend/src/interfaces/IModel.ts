@@ -5,5 +5,6 @@ export interface IModel <T> {
   readOneCustumer(name: string, cpf: string, email: string):Promise<T | null>,
   update(_id:string, obj:Partial<T>):Promise<T | null>,
   delete(_id:string):Promise<T | null>,
-  readAll():Promise<T[] | null>
+  readAll():Promise<T[] | null>,
+  readOneId(_id: string):Promise<T | null>,
 }

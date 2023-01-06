@@ -4,6 +4,14 @@ import { ICustomers } from '../interfaces/ICustomers';
 
 function useCustomers() {
   const [customers, setCustomers] = useState<ICustomers[]>([]);
+  const [objcustomers, setObjCustomers] = useState<ICustomers>({
+    name: '',
+    email: '',
+    cpf: '',
+    address: '',
+    phone: '',
+    _id: '',
+  });
 
   const ApiCustomers = useCallback(async () => {
     const customersData = await apiGetCustomers();
@@ -17,6 +25,8 @@ function useCustomers() {
   return {
     customers,
     setCustomers,
+    objcustomers,
+    setObjCustomers,
   };
 }
 

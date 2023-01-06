@@ -4,5 +4,5 @@ export interface ICustomers {
     email: string,
     address: string,
     phone: string,
-    id: string,
+    _id: string,
 }
