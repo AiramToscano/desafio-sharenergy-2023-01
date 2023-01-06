@@ -1,40 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Input } from 'the-mask-input';
-import { apiCreateCustomers, apiGetCustomers } from '../utils/Apis';
-import useCustomers from '../hooks/useCustomers';
+import { IFormsProps } from '../interfaces/IFormsCustomers';
 
-function PageCustomers() {
-  const [name, setName] = useState('');
-  const { setCustomers } = useCustomers();
-  const [email, setEmail] = useState('');
-  const [cpf, setCpf] = useState('');
-  const [address, setAddress] = useState('');
-  const [phone, setPhone] = useState('');
-  const [msgApi, setMsgApi] = useState('');
+function FormCustomers(object : IFormsProps) {
+  const {
+    setName, setCpf, setAddress, setEmail, setPhone, email,
+    phone,
+    name,
+    cpf,
+    address,
+    msgApi,
+  } = object;
 
   function loginClick(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-  }
-
-  async function handleSubmit(event: React.MouseEvent<HTMLElement>) {
-    event.preventDefault();
-    const userId = window.localStorage.getItem('user');
-    if (userId) {
-      const findUserIdAccont = JSON.parse(userId);
-      const obj = {
-        name,
-        cpf,
-        address,
-        email,
-        phone,
-      };
-      const api = await apiCreateCustomers(obj, findUserIdAccont.token);
-      if (api.message) setMsgApi(api.message);
-      if (api.response) setMsgApi(api.response.data.message);
-      const customersData = await apiGetCustomers();
-      setTimeout(() => { setMsgApi(''); }, 3000);
-      setCustomers(customersData);
-    }
   }
 
   return (
@@ -51,6 +30,7 @@ function PageCustomers() {
           <Input
             name="cpf"
             placeholder="cpf do cliente"
+            value={cpf}
             mask="cpf"
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => setCpf(event.target.value)}
           />
@@ -78,15 +58,6 @@ function PageCustomers() {
             onChange={(event) => setEmail(event.target.value)}
           />
         </div>
-        <div className="btn">
-          <button
-            type="submit"
-            disabled={email === '' || address === '' || phone === '' || name === ''}
-            onClick={handleSubmit}
-          >
-            Cadastrar
-          </button>
-        </div>
         <div className="error-message">
           <p>{msgApi}</p>
         </div>
@@ -95,4 +66,4 @@ function PageCustomers() {
   );
 }
 
-export default PageCustomers;
+export default FormCustomers;
