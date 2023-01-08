@@ -3,40 +3,44 @@ import { Model, isValidObjectId, UpdateQuery } from 'mongoose';
 import { IModel } from '../interfaces/IModel';
 
 abstract class MongoModel<T> implements IModel<T> {
-  protected _model:Model<T>;
+  protected model:Model<T>;
 
   constructor(model:Model<T>) {
-    this._model = model;
+    this.model = model;
   }
 
   public async readOne(username: string, password: string):Promise<T | null> {
-    return this._model.findOne({ username, password });
+    return this.model.findOne({ username, password });
   }
 
   public async readOneId(_id: string):Promise<T | null> {
-    return this._model.findOne({ _id });
+    return this.model.findOne({ _id });
   }
 
-  public async readOneCustumer(name: string, cpf: string, email: string):Promise<T | null> {
-    return this._model.findOne({$or:[{name}, {cpf}, {email}]});
+  public async readOneCustumer(
+    name: string,
+    cpf: string,
+    email: string,
+  ):Promise<T | null> {
+    return this.model.findOne({ $or: [{ name }, { cpf }, { email }] });
   }
 
   public async readUser(username: string):Promise<T | null> {
-    return this._model.findOne({ username });
+    return this.model.findOne({ username });
   }
 
-  public async readAll():Promise<T[] | null> {
-    return this._model.find();
+  public async readAll():Promise<T[]> {
+    return this.model.find();
   }
 
   public async create(obj:T):Promise<T> {
-    return this._model.create({ ...obj });
+    return this.model.create({ ...obj });
   }
 
   public async update(_id:string, obj:Partial<T>):Promise<T | null> {
     if (!isValidObjectId(_id)) throw new Error('InvalidMongoId'); 
     
-    const result = this._model.findByIdAndUpdate(
+    const result = this.model.findByIdAndUpdate(
       { _id },
       { ...obj } as UpdateQuery<T>,
       { new: true },
@@ -46,8 +50,7 @@ abstract class MongoModel<T> implements IModel<T> {
 
   public async delete(_id:string):Promise<T | null> {
     if (!isValidObjectId(_id)) throw Error('InvalidMongoId');
-    
-    return this._model.findByIdAndRemove({ _id });
+    return this.model.findByIdAndRemove({ _id });
   }
 }
 
