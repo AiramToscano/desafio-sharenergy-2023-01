@@ -3,7 +3,7 @@ import ICustomerController from '../controllers/CustomerControllers';
 import ICustomerModel from '../models/CustomersModel';
 import IUserModel from '../models/Usermodel';
 import CustomerMiddlewares from '../middlewares/CostumerMiddlewares';
-import ICustumerService from '../services/CostumersService';
+import ICustumerService from '../services/CustumersService';
 import CreateJWT from '../utils/CreateJWT';
 
 const route = Router();

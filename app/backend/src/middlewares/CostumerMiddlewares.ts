@@ -2,18 +2,15 @@ import { Request, Response, NextFunction } from 'express';
 import { Ijwt } from '../interfaces/IJwt';
 
 export default class CustomerMiddlewares {
-  constructor(private jwt: Ijwt) { 
+  constructor(private jwt: Ijwt) {
     this.jwt = jwt;
   }
 
   validJwt = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const { authorization } = req.headers;
-      await this.jwt.validJwt(authorization);
-      next();
-    } catch {
-      return res.status(400).json({ message: 'token é inválido' });
-    }
+    const { authorization } = req.headers;
+    const validJwt = await this.jwt.validJwt(authorization);
+    if (validJwt) return next();
+    return res.status(400).json({ message: 'token é inválido' });
   };
 
   validCostumersName = (req: Request, res: Response, next: NextFunction) => {

@@ -4,15 +4,15 @@ import { IUser } from '../interfaces/IUser';
 import { Ijwt } from '../interfaces/IJwt';
 
 export default class UsersController {
-  constructor(private _service: IService<IUser>, private jwt: Ijwt) { }
+  constructor(private service: IService<IUser>, private jwt: Ijwt) { }
 
   public async readOne(
     req: Request,
     res: Response,
   ) {
-    const { username, password } = req.body;
     try {
-      await this._service.readOne(username, password);
+      const { username, password } = req.body;
+      await this.service.readOne(username, password);
       const createjwt = await this.jwt.createJwt(username, password);
       return res.status(200).json(createjwt);
     } catch {

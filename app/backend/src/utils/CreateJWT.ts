@@ -5,14 +5,15 @@ import { IModel } from '../interfaces/IModel';
 import { IUser } from '../interfaces/IUser';
 
 export default class CreateJWT {
-  private _user:IModel<IUser>;
+  private user:IModel<IUser>;
+
   constructor(model:IModel<IUser>) {
-    this._user = model;
+    this.user = model;
   }
 
   async createJwt(username: string, password: string) {
     const md5password = md5(password);
-    const listUser = await this._user.readOne(username, md5password);
+    const listUser = await this.user.readOne(username, md5password);
     const secret = String(process.env.JWT_SECRET);
     const signInOptions: SignOptions = {
       algorithm: 'HS256',
@@ -28,12 +29,12 @@ export default class CreateJWT {
     const validToken = decode(token);
     if (validToken != null) {
       const { name } = validToken as JwtPayloadHandler;
-      const listUser = await this._user.readUser(name);
+      const listUser = await this.user.readUser(name);
       if (listUser != null) {
         return true;
       }
-      throw new Error('Usuario não encontrado');
+      return null;
     }
-    throw new Error('Usuario não encontrado');
+    return null;
   }
 }

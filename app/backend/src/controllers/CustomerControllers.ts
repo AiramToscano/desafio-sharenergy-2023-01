@@ -3,15 +3,15 @@ import ICustomerService from '../interfaces/ICustumerService';
 import { ICustomers } from '../interfaces/ICustomers';
 
 export default class CustomerController {
-  constructor(private _service: ICustomerService<ICustomers>) { }
+  constructor(private service: ICustomerService<ICustomers>) { }
 
   public async create(
     req: Request,
     res: Response,
   ) {
-    const { obj } = req.body;
     try {
-      await this._service.create(obj);
+      const { obj } = req.body;
+      await this.service.create(obj);
       return res.status(201).json({ message: 'Usuario criado com sucesso' });
     } catch {
       return res.status(400)
@@ -23,9 +23,9 @@ export default class CustomerController {
     req: Request,
     res: Response,
   ) {
-    const { id } = req.body;
     try {
-      const result = await this._service.readOne(id);
+      const { id } = req.body;
+      const result = await this.service.readOne(id);
       return res.status(201).json(result);
     } catch {
       return res.status(400)
@@ -37,13 +37,8 @@ export default class CustomerController {
     _req: Request,
     res: Response,
   ) {
-    try {
-      const customers = await this._service.readAll();
-      return res.status(200).json(customers);
-    } catch {
-      return res.status(400)
-        .json({ message: 'não foi possível encontrar nenhum usuario' });
-    }
+    const customers = await this.service.readAll();
+    return res.status(200).json(customers);
   }
 
   public async update(
@@ -53,7 +48,7 @@ export default class CustomerController {
     try {
       const { obj } = req.body;
       const { id } = req.params;
-      const customers = await this._service.update(id, obj);
+      const customers = await this.service.update(id, obj);
       return res.status(204).json(customers);
     } catch {
       return res.status(400)
@@ -67,11 +62,11 @@ export default class CustomerController {
   ) {
     try {
       const { id } = req.params;
-      const customers = await this._service.delete(id);
+      const customers = await this.service.delete(id);
       return res.status(202).json(customers);
     } catch {
       return res.status(400)
-        .json({ message: 'não foi possível excluir nenhum usuario' });
+        .json({ message: 'não foi possível excluir o cliente' });
     }
   }
 }
