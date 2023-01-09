@@ -2,7 +2,7 @@ import React, {
   useCallback, useContext, useEffect, useState,
 } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Header from '../../components/Header';
+import Header from '../../components/Header/Header';
 import { MainContext } from '../../Context/Context';
 import { AppContext } from '../../interfaces/IContext';
 import FormCustomers from '../../components/FormCustomers';
