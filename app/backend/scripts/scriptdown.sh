@@ -1,5 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-echo "Excluindo todo o db..."
+echo "Configurando o db..."
+
+
+npm install -g migrate-mongo
+
 cd migrations
 migrate-mongo down
