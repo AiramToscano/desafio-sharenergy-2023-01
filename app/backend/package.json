@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "/bin/sh scriptdown.sh && /bin/sh scriptup.sh && nodemon --watch \"./src/**\" ./src/server.ts",
+    "dev": "/bin/sh ./scripts/scriptdown.sh && /bin/sh ./scripts/scriptup.sh && nodemon --watch \"./src/**\" ./src/server.ts",
     "lint": "eslint . --ext .jsx,.ts,.tsx",
     "test": "jest -i --forceExit --verbose",
     "test:dev": "mocha -r ts-node/register src/tests/unit/**/*.test.ts --exit -t 60000",
