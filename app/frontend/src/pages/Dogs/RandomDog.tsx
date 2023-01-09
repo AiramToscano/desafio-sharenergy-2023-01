@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
-import { apiRandomDogs } from '../utils/Apis';
+import Header from '../../components/Header';
+import { apiRandomDogs } from '../../utils/Apis';
 
 function RandomDog() {
   const navigate = useNavigate();

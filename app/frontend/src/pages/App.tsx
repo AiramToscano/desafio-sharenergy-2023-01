@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Login from './Login';
-import Home from './Home';
-import HttpCats from './HttpCats';
-import UpdateCustomers from './UpdateCustomers';
-import RandomDog from './RandomDog';
-import PageCustomers from './PageCustomers';
+import Login from './Login/Login';
+import Home from './Home/Home';
+import HttpCats from './Cats/HttpCats';
+import UpdateCustomers from './Customers.tsx/UpdateCustomers';
+import RandomDog from './Dogs/RandomDog';
+import PageCustomers from './Customers.tsx/PageCustomers';
 
 function App() {
   return (

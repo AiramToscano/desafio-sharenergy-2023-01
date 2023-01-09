@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../components/Header';
-import Customers from '../components/Customers';
-import CreateCustomers from '../components/CreateCustomers';
+import Header from '../../components/Header';
+import Customers from '../../components/Customers';
+import CreateCustomers from '../../components/CreateCustomers';
 
 function PageCustomers() {
   return (
