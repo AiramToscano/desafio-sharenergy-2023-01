@@ -1,16 +1,17 @@
-// In this file you can configure migrate-mongo
+require('dotenv').config()
 
 const config = {
   mongodb: {
     // TODO Change (or review) the url to your MongoDB:
-    url: 'mongodb://localhost:27017/shareenergy',
+    url: process.env.MONGO_URI || 'mongodb://0.0.0.0:27017/shareenergy',
 
     // TODO Change this to your database name:
-    databaseName: 'shareenergy',
+    databaseName:'shareenergy',
 
     options: {
       useNewUrlParser: true, // removes a deprecation warning when connecting
       useUnifiedTopology: true, // removes a deprecating warning when connecting
+      directConnection:true
       //   connectTimeoutMS: 3600000, // increase connection timeout to 1 hour
       //   socketTimeoutMS: 3600000, // increase socket timeout to 1 hour
     },

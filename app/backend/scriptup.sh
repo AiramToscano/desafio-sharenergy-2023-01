@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 echo "Iniciando o db com as configuraçoes inicias.."
 cd migrations
