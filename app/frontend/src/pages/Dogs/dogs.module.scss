@@ -21,22 +21,23 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-top: 40px;
   }
 
 .divButton {
     display: flex;
-    margin-top: 4px;
+    margin-top: 10px;
     justify-content: center;
 }
 
 .divImage {
     display: flex;
-    margin-top: 4px;
+    margin-top: 10px;
     justify-content: center;
 }
 
 .card__image {      
     margin-top: 20px;
-    width: 50%;
-    height: auto;
+    width: 500px;
+    height: 400px;
   }

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import { apiRandomDogs } from '../../utils/Apis';
+import style from './dogs.module.scss';
 
 function RandomDog() {
   const navigate = useNavigate();
@@ -32,18 +33,22 @@ function RandomDog() {
   return (
     <div>
       <Header />
-      <div>
+      <div className={style.divButton}>
         <button
           type="submit"
+          className={style.button}
           onClick={handleSubmit}
         >
           Refresh
         </button>
       </div>
-      <img
-        src={`${URL_DOGS}${code}`}
-        alt="dogs"
-      />
+      <div className={style.divImage}>
+        <img
+          className={style.card__image}
+          src={`${URL_DOGS}${code}`}
+          alt="dogs"
+        />
+      </div>
     </div>
   );
 }
