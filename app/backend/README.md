@@ -180,3 +180,9 @@ Para essa aplicação back-end, foi feito testes unitarios, cobrindo 100% da apl
 
 `npm run test:dev` - Para rodar os testes unitários.
 `npm run test:coverage` - Para rodar os testes junto com a cobertura da aplicação.
+
+Testes back-end com 100% de cobertura.
+
+<div align="center">
+  <img src="./images/Login.png" alt="Login"/>
+</div>
