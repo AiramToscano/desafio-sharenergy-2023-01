@@ -17,7 +17,7 @@ Antes de utilizar o projeto, é necessario ter Git, Docker/Docker-compose e npm/
 
 ## 🛠️ Ferramentas
 
-## - Front End:
+## - Front-End:
   - React
   - Typescript
   - React Router Dom
@@ -28,7 +28,7 @@ Antes de utilizar o projeto, é necessario ter Git, Docker/Docker-compose e npm/
   - Eslint
   - The-mask-input
   
-## - Back End:
+## - Back-End:
   - Node
   - Typescript
   - Express
@@ -57,9 +57,9 @@ npm run compose:down // para parar completamente a aplicação
 ```
 3 - Após rodar o comando, aguarde um pouco que a aplicação irá ficar disponivel nas seguintes rotas:
 
-  `- Front End: http://localhost:3000`
+  `- Front-End: http://localhost:3000`
 
-  `- Back End: http://localhost:3001`
+  `- Back-End: http://localhost:3001`
 
   <p> Caso algum container tiver com o status unhealty, você poderá acessar a aplicação localmente, instalando as dependências  `npm install`, tanto no <code>/app/frontend</code> quanto no <code>/app/backend</code></p>
 
@@ -71,6 +71,15 @@ npm run compose:down // para parar completamente a aplicação
 
 - [Documentação](https://github.com/AiramToscano/desafio-sharenergy-2023-01/blob/main/app/backend/README.md)
 
-# Front End
+# Front-End
 
 - [Documentação](https://github.com/AiramToscano/desafio-sharenergy-2023-01/blob/main/app/frontend/README.md)
+
+
+## ⏯️ Vídeo
+
+- [Apresentação](https://www.youtube.com/watch?v=hN6HHTholEE)
+
+## 🎁 Expressões de gratidão
+
+- Gostaria de agradecer ShareEnergy por esse desafio, aprendi muito com esse projeto, a cada um novo desafio se torna um novo aprendizado.
