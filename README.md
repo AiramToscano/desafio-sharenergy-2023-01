@@ -80,6 +80,6 @@ npm run compose:down // para parar completamente a aplicação
 
 - [Apresentação](https://www.youtube.com/watch?v=hN6HHTholEE)
 
-## 🎁 Expressões de gratidão
+## 🎁 Agradecimentos
 
 - Gostaria de agradecer ShareEnergy por esse desafio, aprendi muito com esse projeto, a cada um novo desafio se torna um novo aprendizado.
