@@ -43,7 +43,6 @@ Antes de utilizar o projeto, é necessario ter Git, Docker/Docker-compose e npm/
   - Migrate-mongo
 
 ## ⚙️ Como executar
-<details>
 
 Será necessário que a porta 3000 e 3001 estejam disponíveis para a aplicação, Mongodb usará a porta 27017.
 
@@ -67,9 +66,6 @@ npm run compose:down // para parar completamente a aplicação
   <p>E logo após a instalação das dependências, rode os comandos <code>npm start</code> no Frontend e o comando <code>npm run dev</code> no Backend</p>
 
   <p>Caso queria rodar localmente, irá precisar ter o mongoDB instalado na máquina ou em um container docker, com o a url `mongodb://0.0.0.0:27017/shareenergy` </p>
-
-</details>
-
 
 # Back-End
 
