@@ -184,5 +184,5 @@ Para essa aplicação back-end, foi feito testes unitarios, cobrindo 100% da apl
 Testes back-end com 100% de cobertura.
 
 <div align="center">
-  <img src="./images/Login.png" alt="Login"/>
+  <img src="./images/tests.png" alt="tests"/>
 </div>
