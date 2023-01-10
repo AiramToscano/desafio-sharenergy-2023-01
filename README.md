@@ -44,6 +44,7 @@ Antes de utilizar o projeto, é necessario ter Git, Docker/Docker-compose e npm/
 
 ## ⚙️ Como executar
 
+ <summary> Rodar localmente com/sem Docker</summary>
 <details>
 
 Será necessário que a porta 3000 e 3001 estejam disponíveis para a aplicação, Mongodb usará a porta 27017.
@@ -63,8 +64,6 @@ npm run compose:down // para parar completamente a aplicação
 
   `- Back End: http://localhost:3001`
 
-
-  <summary> Rodar localmente sem Docker</summary>
   <p> Caso algum container tiver com o status unhealty, você poderá acessar a aplicação localmente, instalando as dependências  `npm install`, tanto no <code>/app/frontend</code> quanto no <code>/app/backend</code></p>
 
   <p>E logo após a instalação das dependências, rode os comandos <code>npm start</code> no Front End e o comando <code>npm run dev</code> no back end</p>
