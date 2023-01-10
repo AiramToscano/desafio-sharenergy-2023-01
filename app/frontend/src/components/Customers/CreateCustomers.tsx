@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { apiCreateCustomers, apiGetCustomers } from '../utils/Apis';
-import useCustomers from '../hooks/useCustomers';
+import { apiCreateCustomers, apiGetCustomers } from '../../utils/Apis';
+import useCustomers from '../../hooks/useCustomers';
 import FormCustomers from './FormCustomers';
+import style from './customers.module.scss';
 
 function PageCustomers() {
   const [name, setName] = useState('');
@@ -35,21 +36,24 @@ function PageCustomers() {
 
   return (
     <div>
-      <FormCustomers
-        setName={setName}
-        setCpf={setCpf}
-        setAddress={setAddress}
-        setEmail={setEmail}
-        setPhone={setPhone}
-        email={email}
-        phone={phone}
-        name={name}
-        cpf={cpf}
-        address={address}
-        msgApi={msgApi}
-      />
-      <div className="btn">
+      <div className={style.infodiv}>
+        <FormCustomers
+          setName={setName}
+          setCpf={setCpf}
+          setAddress={setAddress}
+          setEmail={setEmail}
+          setPhone={setPhone}
+          email={email}
+          phone={phone}
+          name={name}
+          cpf={cpf}
+          address={address}
+          msgApi={msgApi}
+        />
+      </div>
+      <div className={style.infodiv}>
         <button
+          className={style.submitclass}
           type="submit"
           disabled={email === '' || address === '' || phone === '' || name === ''}
           onClick={handleSubmit}

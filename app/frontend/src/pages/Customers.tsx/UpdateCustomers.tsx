@@ -5,8 +5,9 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import { MainContext } from '../../Context/Context';
 import { AppContext } from '../../interfaces/IContext';
-import FormCustomers from '../../components/FormCustomers';
+import FormCustomers from '../../components/Customers/FormCustomers';
 import { apiGetCustomer, apiUpateCustomer, apiDeleteCustomer } from '../../utils/Apis';
+import style from '../../components/Customers/customers.module.scss';
 
 function UpdateCustomers() {
   const navigate = useNavigate();
@@ -75,9 +76,10 @@ function UpdateCustomers() {
         address={address}
         msgApi={msgApi}
       />
-      <div className="btn">
+      <div className={style.divButton}>
         <button
           type="submit"
+          className={style.submitclass}
           disabled={
                 email === '' || address === '' || phone === '' || name === '' || cpf === ''
             }
@@ -87,12 +89,14 @@ function UpdateCustomers() {
         </button>
         <button
           type="button"
+          className={style.submitclass}
           onClick={() => navigate('/customers')}
         >
           Cancelar
         </button>
         <button
           type="button"
+          className={style.submitclass}
           onClick={handleSubmitDelete}
         >
           Deletar Cliente

@@ -1,14 +1,15 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import Customers from '../../components/Customers';
-import CreateCustomers from '../../components/CreateCustomers';
+import Customers from '../../components/Customers/Customers';
+import CreateCustomers from '../../components/Customers/CreateCustomers';
+import style from '../../components/Customers/customers.module.scss';
 
 function PageCustomers() {
   return (
     <div>
       <Header />
-      <h4>Clientes: </h4>
       <CreateCustomers />
+      <h4 className={style.infodiv}>CLIENTES: </h4>
       <Customers />
     </div>
   );

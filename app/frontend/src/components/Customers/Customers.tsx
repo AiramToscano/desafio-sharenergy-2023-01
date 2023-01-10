@@ -2,11 +2,12 @@ import React, {
   useEffect, useCallback, useContext,
 } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useCustomers from '../hooks/useCustomers';
-import { MainContext } from '../Context/Context';
-import { AppContext } from '../interfaces/IContext';
-import { apiGetCustomers } from '../utils/Apis';
-import { ICustomers } from '../interfaces/ICustomers';
+import useCustomers from '../../hooks/useCustomers';
+import { MainContext } from '../../Context/Context';
+import { AppContext } from '../../interfaces/IContext';
+import { apiGetCustomers } from '../../utils/Apis';
+import { ICustomers } from '../../interfaces/ICustomers';
+import style from './customers.module.scss';
 
 function Users() {
   const navigate = useNavigate();
@@ -31,12 +32,13 @@ function Users() {
   }, []);
 
   return (
-    <div>
+    <div className={style.cards}>
       {customers.length >= 1 ? customers.map((e) => (
-        <div key={e.cpf}>
+        <div className={style.card} key={e.cpf}>
           <p>{e.name}</p>
           <button
             type="button"
+            className={style.next}
             onClick={() => handleSubmit(e)}
           >
             Ver Detalhes
