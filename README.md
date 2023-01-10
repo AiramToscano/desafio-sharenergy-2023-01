@@ -43,8 +43,6 @@ Antes de utilizar o projeto, é necessario ter Git, Docker/Docker-compose e npm/
   - Migrate-mongo
 
 ## ⚙️ Como executar
-
- <summary> Rodar localmente com/sem Docker</summary>
 <details>
 
 Será necessário que a porta 3000 e 3001 estejam disponíveis para a aplicação, Mongodb usará a porta 27017.
