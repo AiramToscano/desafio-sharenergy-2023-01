@@ -69,8 +69,8 @@ npm run compose:down // para parar completamente a aplicação
 
 # Back-End
 
-- Documentação
+- [Documentação](https://github.com/AiramToscano/desafio-sharenergy-2023-01/blob/main/app/backend/README.md)
 
 # Front End
 
-- Documentação
+- [Documentação](https://github.com/AiramToscano/desafio-sharenergy-2023-01/blob/main/app/frontend/README.md)
