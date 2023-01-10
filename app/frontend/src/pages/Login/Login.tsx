@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { apiLogin } from '../utils/Apis';
+import style from './login.module.scss';
+import { apiLogin } from '../../utils/Apis';
 
 function Login() {
   const MIN_LENGTH_PASSWORD = 8;
@@ -41,12 +42,13 @@ function Login() {
   }, []);
 
   return (
-    <div>
+    <div className={style.formclass}>
       <form id="login_form" onSubmit={loginClick}>
         <h4> Sign In</h4>
         <div>
           <input
             type="username"
+            className={style.fieldclass}
             value={username}
             placeholder="Username"
             autoComplete="on"
@@ -54,6 +56,7 @@ function Login() {
           />
           <input
             type="password"
+            className={style.fieldclass}
             autoComplete="on"
             placeholder="Password"
             name="password"
@@ -61,14 +64,17 @@ function Login() {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <p>Remember-me</p>
-        <input
-          type="checkbox"
-          onChange={(event) => setRemember(event.target.checked)}
-        />
+        <div className={style.infodiv}>
+          <input
+            type="checkbox"
+            onChange={(event) => setRemember(event.target.checked)}
+          />
+          <p className={style.infodivFilho}>Remember-me</p>
+        </div>
         <div className="btn">
           <button
             type="submit"
+            className={style.submitclass}
             disabled={password.length < MIN_LENGTH_PASSWORD || username.length < MIN_USERNAME}
             onClick={handleSubmit}
           >

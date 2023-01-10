@@ -1,0 +1,42 @@
+.fieldclass {
+    width: 20%;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px 0px;
+    text-indent: 6px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'system-ui';
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.button {
+    background-color: black; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.divButton {
+    display: flex;
+    margin-top: 4px;
+    justify-content: center;
+}
+
+.divImage {
+    display: flex;
+    margin-top: 4px;
+    justify-content: center;
+}
+
+.card__image {      
+    margin-top: 20px;
+    width: 50%;
+    height: auto;
+  }

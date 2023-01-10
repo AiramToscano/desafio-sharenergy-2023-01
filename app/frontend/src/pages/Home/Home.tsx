@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
-import Users from '../components/Users';
+import Header from '../../components/Header/Header';
+import Users from '../../components/Users/Users';
 
 function Home() {
   const navigate = useNavigate();

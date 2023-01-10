@@ -1,6 +1,7 @@
 import React from 'react';
 import { Input } from 'the-mask-input';
-import { IFormsProps } from '../interfaces/IFormsCustomers';
+import { IFormsProps } from '../../interfaces/IFormsCustomers';
+import style from './customers.module.scss';
 
 function FormCustomers(object : IFormsProps) {
   const {
@@ -18,10 +19,11 @@ function FormCustomers(object : IFormsProps) {
 
   return (
     <div>
-      <form id="login_form" onSubmit={loginClick}>
+      <form className={style.submitclass} id="login_form" onSubmit={loginClick}>
         <div>
           <input
             type="name"
+            className={style.fieldclass}
             value={name}
             placeholder="Nome do cliente"
             autoComplete="on"
@@ -29,14 +31,16 @@ function FormCustomers(object : IFormsProps) {
           />
           <Input
             name="cpf"
-            placeholder="cpf do cliente"
+            placeholder="Cpf do cliente"
             value={cpf}
             mask="cpf"
+            className={style.fieldclass}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => setCpf(event.target.value)}
           />
           <input
             type="phone"
             value={phone}
+            className={style.fieldclass}
             placeholder="+99 (99) 9999-9999"
             autoComplete="on"
             onChange={(event) => setPhone(event.target.value)}
@@ -44,6 +48,7 @@ function FormCustomers(object : IFormsProps) {
           <input
             type="addres"
             autoComplete="on"
+            className={style.fieldclass}
             placeholder="Endereço do cliente"
             name="address"
             value={address}
@@ -52,6 +57,7 @@ function FormCustomers(object : IFormsProps) {
           <input
             type="email"
             autoComplete="on"
+            className={style.fieldclass}
             placeholder="Email do cliente"
             name="address"
             value={email}
