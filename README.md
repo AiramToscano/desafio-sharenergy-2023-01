@@ -64,7 +64,7 @@ npm run compose:down // para parar completamente a aplicação
 
   <p> Caso algum container tiver com o status unhealty, você poderá acessar a aplicação localmente, instalando as dependências  `npm install`, tanto no <code>/app/frontend</code> quanto no <code>/app/backend</code></p>
 
-  <p>E logo após a instalação das dependências, rode os comandos <code>npm start</code> no Front End e o comando <code>npm run dev</code> no back end</p>
+  <p>E logo após a instalação das dependências, rode os comandos <code>npm start</code> no Frontend e o comando <code>npm run dev</code> no Backend</p>
 
   <p>Caso queria rodar localmente, irá precisar ter o mongoDB instalado na máquina ou em um container docker, com o a url `mongodb://0.0.0.0:27017/shareenergy` </p>
 
